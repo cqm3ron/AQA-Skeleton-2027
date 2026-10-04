@@ -22,7 +22,7 @@
             int MaxScore = 10;
             const string FileExtension = ".txt";
             Console.Write("Enter filename to load or just press Enter to play the default game: ");
-            string FileName = Console.ReadLine() + FileExtension;
+            string FileName = Console.ReadLine() + FileExtension; // BUG: doesn't account for if the user enters a filename with an extension
             bool UseDataFromFile = false;
             if (FileName != FileExtension)
             {
@@ -54,8 +54,7 @@
             Console.ReadLine();
         }
 
-        static bool LoadGame(string FileName, List<Pile> Board, List<Player> Players, List<Tile> Discard,
-            ref int MaxScore, ref int WhoseTurn, ref int TurnsSinceMatch)
+        static bool LoadGame(string FileName, List<Pile> Board, List<Player> Players, List<Tile> Discard, ref int MaxScore, ref int WhoseTurn, ref int TurnsSinceMatch)
         {
             try
             {
